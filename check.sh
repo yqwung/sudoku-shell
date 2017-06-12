@@ -49,7 +49,7 @@ do
 	done
 
 	# 如果计数为9，说明1 2 3 4 5 6 7 8 9都在数组，即为正确
-    if [ ${count_9} -eq 9 ]
+	if [ ${count_9} -eq 9 ]
 	then
 		((ok_check++))    # echo "line ${i} ok"
 	fi
@@ -64,7 +64,7 @@ do
 		group[j]=${sudoku_check[$((9*j+i))]}
 	done
 	
-    count_9=0	
+	count_9=0	
 	for k in {0..8}
 	do
 		if [[ "${group[@]}" =~ $((k+1)) ]]  
@@ -76,7 +76,7 @@ do
 		fi
 	done
 
-    if [ ${count_9} -eq 9 ]
+	if [ ${count_9} -eq 9 ]
 	then
 		((ok_check++))    # echo "col ${i} ok"
 	fi	
@@ -107,7 +107,7 @@ do
 		fi
 	done
 
-    if [ ${count_9} -eq 9 ]
+	if [ ${count_9} -eq 9 ]
 	then
 		((ok_check++))     # echo "part ${i} ok"
 	fi	

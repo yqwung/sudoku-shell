@@ -43,7 +43,6 @@ else
 	fi
 fi
 
-# 
 
 sudoku=()	
 
@@ -88,7 +87,7 @@ for i in {0..8}             # 等价于 for i in 0 1 2 3 4 5 6 7 8
 do
 	for j in {0..8}
 	do
-	    echo -ne "\033[$[ $i * 2 + 3 ];$[ $j * 4 + 9 ]H"   # 光标移动到第i*2+3行，第j*4+9列 	
+		echo -ne "\033[$[ $i * 2 + 3 ];$[ $j * 4 + 9 ]H"   # 光标移动到第i*2+3行，第j*4+9列 	
 		if [ ${sudoku[$[ $i * 9 + $j ]]} -ne 0 ]           # 如果数据不等于0，就写入
 		then
 			echo -n "${sudoku[$[ $i * 9 + $j ]]}"
@@ -105,7 +104,7 @@ start=$(date "+%s")  # 计时器
 # 3 获取用户键盘输入
 while :                    
 do			
-    #read -s -t 1 -n 1 KEY    # 获取键盘输入，超时退出
+	#read -s -t 1 -n 1 KEY    # 获取键盘输入，超时退出
 	read -s -n 1 KEY    # 获取键盘输入，存入变量数组KEY
 	case ${KEY[0]} in		   
 		"A")            # 光标上移
@@ -162,7 +161,7 @@ do
 			fi
 			;;
 		"f")             # 完成数独游戏，检查正确性		
-		    source ./check.sh ${sudoku_buf[*]}   #  执行数独检查脚本check.sh，并传入sudoku_buf数组
+			source ./check.sh ${sudoku_buf[*]}   #  执行数独检查脚本check.sh，并传入sudoku_buf数组
 			if [[ $return_check -eq 0 ]]  # 判断sudoku_buf数组是否包含0元素，return_check为check.sh的执行结果
 			then
 				tput sc      # 保存光标位置
@@ -193,7 +192,7 @@ do
 	
 	
 	# 计时器
-    now=$(date "+%s")
+	now=$(date "+%s")
 	time=$((now-start))
 
 	minute=$((time/60))

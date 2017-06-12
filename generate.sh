@@ -149,7 +149,7 @@ sudoku_extract(){
 	
 	for((i=1;i<${number};i++))
 	do
-	    random81=$(($RANDOM%81))
+		random81=$(($RANDOM%81))
 		while [ ${sudoku_generate[${random81}]} == "0" ]
 		do
 			random81=$(($RANDOM%81))
