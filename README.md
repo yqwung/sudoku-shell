@@ -25,7 +25,7 @@ A sudoku game that achieved through the shell script.
     
 * 说明
 
-    脚本参数指游戏等级，共有8个等级（1~8）。
+    脚本参数指游戏等级，共有8个等级（1~8）。
 * 操作
 
     上、下、左、右键移动光标，数字键输入，'f'完成游戏，'q'退出游戏。
